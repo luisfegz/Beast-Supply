@@ -6,13 +6,16 @@ import Navbar from "../../components/global/Navbar";
 import Featured from "../../components/global/Featured";
 import { mongooseConnect } from "../../lib/mongoose";
 import { Product } from "../../models/Product";
+import NewProducts from '../../components/global/NewProducts';
+
 
 interface HomeProps {
-  product: typeof Product; // Define the correct type for the 'product' prop
+  featuredProduct: typeof Product;
+  newProducts: typeof Product[];
 }
 
 
-export default function Home({ product }: HomeProps) {
+export default function Home({ featuredProduct, newProducts }: HomeProps) {
   return (
     <main className="flex bg-[#0a0a0a] items-center justify-center flex-col">
       <Navbar />
@@ -66,7 +69,11 @@ export default function Home({ product }: HomeProps) {
         </section>
       {/* <--------------------------------- Third Section: Experimental ---------------------------------> */}
         <section className="w-full mt-0 inset-0">
-          <Featured product={product}/>
+          <Featured featuredProduct={featuredProduct}/>
+        </section>
+      {/* <--------------------------------- Third Section: Experimental ---------------------------------> */}
+        <section className="">
+          <NewProducts newProducts={newProducts} />
         </section>
       {/* <------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
         <section className="w-full mt-0 inset-0 h-screen">
@@ -81,8 +88,13 @@ export default function Home({ product }: HomeProps) {
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const featuredProductId = '651116bbf46af542a25739c8';
   await mongooseConnect();
-  const product = await Product.findById(featuredProductId);
+  const featuredProduct = await Product.findById(featuredProductId);
+  {/* Limits of elements of NewProducts section is located here -----------> * */}
+  const newProducts = await Product.find({}, null, {sort: {'_id': -1}, limit:10 });
   return {
-    props: { product: JSON.parse(JSON.stringify(product)) },
+    props: { 
+      featuredProduct: JSON.parse(JSON.stringify(featuredProduct)),
+      newProducts : JSON.parse(JSON.stringify(newProducts)),
+    },
   };
 };
