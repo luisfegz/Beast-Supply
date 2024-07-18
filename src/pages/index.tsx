@@ -86,7 +86,7 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
 
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const featuredProductId = '651116bbf46af542a25739c8';
+  const featuredProductId = '6699a9a9cf0844c86a8dfe97';
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
   {/* Limits of elements of NewProducts section is located here -----------> * */}
