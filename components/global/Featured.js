@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 function Featured({featuredProduct}) {
   return (
-    <div className='bg-black'>
+    <div className='bg-zinc-950'>
       <Center>
         <Wrapper>
           <div className='flex items-center'>
@@ -43,7 +43,7 @@ function Featured({featuredProduct}) {
             </div>
           </div>
           <div>
-            <img className='max-w-[100%]' src="https://luisfelipegaitan-next-ecommerce.s3.amazonaws.com/1695618706972.png" alt="Image" />
+            <img className='max-w-[100%]' src="https://luisfelipegaitan-next-ecommerce.s3.amazonaws.com/1721346417623.png" alt="Image" />
           </div>
         </Wrapper>
       </Center>

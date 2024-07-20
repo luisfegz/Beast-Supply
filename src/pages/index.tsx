@@ -7,6 +7,7 @@ import Featured from "../../components/global/Featured";
 import { mongooseConnect } from "../../lib/mongoose";
 import { Product } from "../../models/Product";
 import NewProducts from '../../components/global/NewProducts';
+import { Vortex } from "../../components/ui/vortex";
 
 
 interface HomeProps {
@@ -17,7 +18,7 @@ interface HomeProps {
 
 export default function Home({ featuredProduct, newProducts }: HomeProps) {
   return (
-    <main className="flex bg-[#0a0a0a] items-center justify-center flex-col">
+    <main className="flex bg-[#000000] items-center justify-center flex-col">
       <Navbar />
       {/* <------------------------------ First Section: Container Scroll --------------------------------> */} 
         <section 
@@ -71,8 +72,24 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
         <section className="w-full mt-0 inset-0">
           <Featured featuredProduct={featuredProduct}/>
         </section>
+      {/* <------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
+        <section className="w-full mt-0 inset-0">
+          <div className=" rounded-md h-[30vh] overflow-hidden">
+            <Vortex
+              backgroundColor="black"
+              rangeY={800}
+              particleCount={500}
+              baseHue={120}
+              className="flex items-center flex-col justify-center px-2 md:px-10  py-4 w-full h-full"
+            >
+              <h2 className="text-white text-2xl md:text-6xl font-bold text-center">
+                Nuevos Productos
+              </h2>
+            </Vortex>
+          </div>
+        </section>
       {/* <--------------------------------- Third Section: Experimental ---------------------------------> */}
-        <section className="">
+        <section className="bg-black">
           <NewProducts newProducts={newProducts} />
         </section>
       {/* <------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 

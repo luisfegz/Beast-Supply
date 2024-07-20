@@ -17,7 +17,7 @@
     "@tsparticles/slim": "^3.5.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.7",
+    "framer-motion": "^11.3.8",
     "lucide-react": "^0.395.0",
     "mongoose": "^8.5.1",
     "next": "14.2.4",
@@ -25,6 +25,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-element-to-jsx-string": "^15.0.0",
+    "simplex-noise": "^4.0.2",
     "styled-components": "^6.1.11",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
