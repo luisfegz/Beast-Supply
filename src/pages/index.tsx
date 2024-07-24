@@ -8,6 +8,10 @@ import { mongooseConnect } from "../../lib/mongoose";
 import { Product } from "../../models/Product";
 import NewProducts from '../../components/global/NewProducts';
 import { Vortex } from "../../components/ui/vortex";
+import { MacbookScroll } from '../../components/ui/macbook-scroll';
+import Link from "next/link";
+import { Badge } from "lucide-react";
+import { FlipWords } from "../../components/ui/flip-words";
 
 
 interface HomeProps {
@@ -17,9 +21,25 @@ interface HomeProps {
 
 
 export default function Home({ featuredProduct, newProducts }: HomeProps) {
+  const words = ["Proteínas", "Creatinas", "Pre-entrenos"];
   return (
-    <main className="flex bg-[#000000] items-center justify-center flex-col">
+    <main className="flex bg-[#04090d] items-center justify-center flex-col">
       <Navbar />
+      <section className="w-full mt-0 inset-0">
+        <MacbookScroll
+          title={
+            <div className="text-white mb-[200px]">
+              <div className="font-light">
+                Si estas buscando: 
+                <FlipWords className="font-semibold text-red-500" words={words} /> <br />
+                Beast Supply es tu hogar!
+              </div>
+            </div>
+          }
+          src={`/temp-banner.jpeg`}
+          showGradient={false}
+        />    
+      </section>
       {/* <------------------------------ First Section: Container Scroll --------------------------------> */} 
         {/*<section 
             className="
