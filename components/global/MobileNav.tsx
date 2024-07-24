@@ -38,8 +38,8 @@ const MobileNav = () => {
                       closeOnCurrent('/accesorios')
                     }
                     className='flex items-center w-full font-medium text-xl text-white'
-                    href='/accesorios'>
-                    Accesorios
+                    href='/proteinas'>
+                    Proteínas
                   </Link>
                 </li>
                 <li className='my-3 h-px w-full bg-zinc-700' />
@@ -49,8 +49,8 @@ const MobileNav = () => {
                       closeOnCurrent('/juguetes')
                     }
                     className='flex items-center w-full font-medium text-xl text-white'
-                    href='/juguetes'>
-                    Juguetes
+                    href='/creatinas'>
+                    Creatinas
                   </Link>
                 </li>
                 <li className='my-3 h-px w-full bg-zinc-700' />
@@ -60,8 +60,8 @@ const MobileNav = () => {
                       closeOnCurrent('/nosotros')
                     }
                     className='flex items-center w-full font-medium text-xl text-white'
-                    href='/bienestar'>
-                    Bienestar
+                    href='/prentrenos'>
+                    Pre entrenos
                   </Link>
                 </li>
               </>

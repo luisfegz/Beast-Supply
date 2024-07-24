@@ -14,13 +14,13 @@ const Navbar = () => {
   return (
     <nav className='sticky h-[76px] inset-x-0 top-0 z-30 w-full border-b border-zinc-700 bg-black transition-all'>
       <MaxWidthWrapper>
-        <div className='flex h-[76px] items-center justify-between '>
+        <div className='flex h-[80px] items-center justify-between '>
           <Link href='/' className='flex items-center z-40 '>
             <Image
                 src="/favicon.png"
                 alt="Champion Store Logo"
-                width={42}
-                height={42}
+                width={68}
+                height={68}
                 className="shadow-sm"
             />
             <span className='w-full font-semibold text-black-500'></span>
@@ -38,35 +38,35 @@ const Navbar = () => {
             >
                 <li>
                     <Link
-                        href='/accesorios'
+                        href='/proteinas'
                         className={buttonVariants({
                             variant: 'ghost',
                             size: 'sm',
                         })}
                     >
-                        Accesorios
+                        Proteínas
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href='/juguetes'
+                        href='/creatinas'
                         className={buttonVariants({
                             variant: 'ghost',
                             size: 'sm',
                         })}
                     >
-                        Juguetes
+                        Creatinas
                     </Link>
                 </li>
                 <li>
                     <Link
-                        href='/bienestar'
+                        href='/prentrenos'
                         className={buttonVariants({
                             variant: 'ghost',
                             size: 'sm',
                         })}
                     >
-                        Bienestar
+                        Pre entrenos
                     </Link>
                 </li>
             </ul>

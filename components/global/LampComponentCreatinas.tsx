@@ -1,11 +1,12 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion'
+
 import { SparklesCore } from './sparkles'
 import { cn } from '../../lib/utils'
 
 
-export function LampComponentAccesorios() {
+export function LampComponentCreatinas() {
   return (
     <LampContainer>
       <motion.h1
@@ -18,8 +19,7 @@ export function LampComponentAccesorios() {
         }}
         className="mt-[408px] md:mt-[360px] bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
-        Diviértete y pon tu 
-        <br />mascota a la moda :D
+        Creatinas
       </motion.h1>
     </LampContainer>
   )

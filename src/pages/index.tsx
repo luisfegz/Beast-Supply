@@ -21,7 +21,7 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
     <main className="flex bg-[#000000] items-center justify-center flex-col">
       <Navbar />
       {/* <------------------------------ First Section: Container Scroll --------------------------------> */} 
-        <section 
+        {/*<section 
             className="
               !overflow-visible w-full
               relative flex flex-col antialiased 
@@ -68,11 +68,11 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
             />
           </div>
         </section>
-      {/* <--------------------------------- Third Section: Experimental ---------------------------------> */}
+       <--------------------------------- Third Section: Experimental ---------------------------------> 
         <section className="w-full mt-0 inset-0">
           <Featured featuredProduct={featuredProduct}/>
         </section>
-      {/* <------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
+        <------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
         <section className="w-full mt-0 inset-0">
           <div className=" rounded-md h-[30vh] overflow-hidden">
             <Vortex
@@ -92,10 +92,10 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
         <section className="bg-black">
           <NewProducts newProducts={newProducts} />
         </section>
-      {/* <------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
+      {/* <------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> 
         <section className="w-full mt-0 inset-0 h-screen">
           <LampComponent/>
-        </section>
+        </section>*/} 
       
     </main>
   );
@@ -107,7 +107,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
   {/* Limits of elements of NewProducts section is located here -----------> * */}
-  const newProducts = await Product.find({}, null, {sort: {'_id': -1}, limit:10 });
+  const newProducts = await Product.find({}, null, {sort: {'_id': -1}, limit:12 });
   return {
     props: { 
       featuredProduct: JSON.parse(JSON.stringify(featuredProduct)),
