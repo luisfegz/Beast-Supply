@@ -17,7 +17,7 @@ export function LampComponentCreatinas() {
           duration: 0.8,
           ease: 'easeInOut',
         }}
-        className="mt-[408px] md:mt-[360px] bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        className="mt-[446px] md:mt-[360px] bg-gradient-to-br from-neutral-300 to-neutral-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
       >
         Creatinas
       </motion.h1>

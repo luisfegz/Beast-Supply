@@ -12,8 +12,8 @@ const ProductsGrid: React.FC<ProductsGridProps> = ({ children }) => {
             mr-[0ppx]
             md:ml-[90px]
             md:mr-[90px]
-            lg:ml-[90px]
-            lg:mr-[90px]
+            lg:ml-[30px]
+            lg:mr-[30px]
         '
     >
         <div 
