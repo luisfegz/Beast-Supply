@@ -187,7 +187,7 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
         <section className="w-full mt-0 inset-0">
           <div className="w-full h-full py-20">
             <h2 className="max-w-7xl pl-4 mx-auto text-center text-xl md:text-5xl font-bold text-neutral-200 font-sans">
-              Get to know your iSad.
+              Sabías que...
             </h2>
             <Carousel items={cards} />
           </div>
