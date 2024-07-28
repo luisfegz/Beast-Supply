@@ -17,9 +17,10 @@ export default function ProductBox({_id, title, description, price, images}) {
           <p className="text-sm text-center mb-3 sm:text-xl mt-2 text-neutral-200">
             {formattedPrice} COP
           </p>
-          <button className="w-full relative inline-flex h-8 sm:h-9 md:h-10 lg:h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#be95be_0%,#75ba75_50%,#71a3c1_100%)]" />
-            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-xs sm:text-sm md:text-base lg:text-lg font-medium text-white backdrop-blur-3xl">
+          
+          <button className="w-full relative inline-flex h-10 overflow-hidden rounded-full p-[2px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
               Comprar <CartIcon className="ml-2 h-3.5 sm:h-3.9 md:h-4.4 lg:h-5" />
             </span>
           </button>
