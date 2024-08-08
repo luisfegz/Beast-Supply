@@ -19,8 +19,8 @@ const ProductsGrid: React.FC<ProductsGridProps> = ({ children }) => {
         <div 
             className="
                 lg:grid-cols-4
-                md:grid-cols-3
-                grid-cols-2
+                md:grid-cols-2
+                sm:grid-cols-2
                 grid">
         {children}
         </div>
