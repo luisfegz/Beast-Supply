@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import MobileNav from './MobileNav';
@@ -8,9 +8,11 @@ import { buttonVariants } from '../ui/button';
 import MaxWidthWrapper from './MaxWidthWrapper';
 import CartShop from '../icons/CarShop';
 import SearchIcon from '../icons/SearchIcon';
+import { CartContext } from './CartContext';
 
 
 const Navbar = () => {
+  const { cartProducts } = useContext(CartContext);
   return (
     <nav className='sticky h-[76px] inset-x-0 top-0 z-30 w-full border-b border-zinc-700 bg-black transition-all'>
       <MaxWidthWrapper>
@@ -80,7 +82,7 @@ const Navbar = () => {
           >
             {/* Offer button (Link) */} 
             <Link 
-              href='/ofertas' 
+              href='/search' 
               className="
                 inline-flex h-12 text-xl animate-shimmer items-center justify-center z-40
                 rounded-md border border-zinc-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
@@ -102,7 +104,7 @@ const Navbar = () => {
               Ofertas
             </Link>
             <Link 
-              href='/ofertas' 
+              href='/cart' 
               className="
                 inline-flex h-12 text-xl animate-shimmer items-center justify-center z-40
                 rounded-md border border-zinc-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
@@ -110,7 +112,7 @@ const Navbar = () => {
                 focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
               "
             >
-              <CartShop />
+              <CartShop />({cartProducts.length})
             </Link>
             {/* End Offer button */}
             

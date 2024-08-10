@@ -154,13 +154,13 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
             />
           </div>
         </section>
-       <--------------------------------- Third Section: Experimental ---------------------------------> 
+       <--------------------------------- Third Section: Experimental ---------------------------------> */}
         <section className="w-full mt-0 inset-0">
           <Featured featuredProduct={featuredProduct}/>
         </section>
         
-        <------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
-        <section className="w-full mt-0 inset-0">
+        {/*<------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
+        {/*<section className="w-full mt-0 inset-0">
           <div className=" rounded-md h-[30vh] overflow-hidden">
             <Vortex
               backgroundColor="black"
@@ -175,7 +175,7 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
             </Vortex>
           </div>
         </section>
-      {/* <--------------------------------- Third Section: Experimental ---------------------------------> */}
+       <--------------------------------- Third Section: Experimental ---------------------------------> */}
         <section className="bg-black">
           <NewProducts newProducts={newProducts} />
         </section>
@@ -199,7 +199,7 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
 
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
-  const featuredProductId = '6699a9a9cf0844c86a8dfe97';
+  const featuredProductId = '66b4fca5ec4cd94d3fa6c42f';
   await mongooseConnect();
   const featuredProduct = await Product.findById(featuredProductId);
   {/* Limits of elements of NewProducts section is located here -----------> * */}
