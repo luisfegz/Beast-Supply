@@ -154,13 +154,13 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
             />
           </div>
         </section>
-       <--------------------------------- Third Section: Experimental ---------------------------------> */}
+       <--------------------------------- Third Section: Experimental ---------------------------------> 
         <section className="w-full mt-0 inset-0">
           <Featured featuredProduct={featuredProduct}/>
-        </section>
+        </section> */}
         
         {/*<------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
-        {/*<section className="w-full mt-0 inset-0">
+        <section className="w-full mt-0 inset-0">
           <div className=" rounded-md h-[30vh] overflow-hidden">
             <Vortex
               backgroundColor="black"
@@ -175,7 +175,7 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
             </Vortex>
           </div>
         </section>
-       <--------------------------------- Third Section: Experimental ---------------------------------> */}
+       {/*<--------------------------------- Third Section: Experimental ---------------------------------> */}
         <section className="bg-black">
           <NewProducts newProducts={newProducts} />
         </section>
