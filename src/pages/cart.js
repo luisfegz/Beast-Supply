@@ -11,7 +11,7 @@ import axios from 'axios';
 
 
 export default function CartPage() {
-  const { cartProducts, addProduct, removeProduct, clearCart } = useContext(CartContext);
+  const { cartProducts } = useContext(CartContext);
   
   function formatPrice(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -89,8 +89,6 @@ export default function CartPage() {
       </>
     );
   */}
-
-
   return (
     <>
       <main className="flex bg-[#0a0a0a] items-center justify-center flex-col">
@@ -99,11 +97,11 @@ export default function CartPage() {
           <div className='text-white mb-10 grid grid-rows-2  md:grid-cols-2 mt-4 md:mt-8 gap-4 md:gap-10 mx-2.5 md:mx-6'>
             {/* Box Products */}
             <div className='bg-neutral-900 rounded-[8.6px] p-5'>
-            <h2>Cart</h2>
-              
+              <h2>Cart</h2>
+              {!cartProducts?.length && (
+                <div>Your Cart is empty</div>
+              )}
             </div>
-            
-              
             <div className='bg-neutral-900 rounded-[8.6px] p-5'>
               <h2 className="font-bold text-xl text-neutral-200">
                 Bienvenido a Beast Supply
@@ -116,39 +114,45 @@ export default function CartPage() {
               <form className="my-8" >
                 <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
                   <LabelInputContainer>
-                    <Label htmlFor="primerNombre">Primer nombre</Label>
-                    <Input id="primerNombre" placeholder="Tyler" type="text" />
+                    <Label htmlFor="name">Primer nombre</Label>
+                    <Input id="name" placeholder="Tyler Durden (Ejemplo)" type="text" />
                   </LabelInputContainer>
                   <LabelInputContainer>
-                    <Label htmlFor="apellido">Apellido</Label>
-                    <Input id="apellido" placeholder="Durden" type="text" />
+                    <Label htmlFor="city">Ciudad</Label>
+                    <Input id="city" placeholder="Santiafo de Cali (Ejemplo)" type="text" />
+                  </LabelInputContainer>
+                  <LabelInputContainer>
+                    <Label htmlFor="postalCode">Codigo Postal</Label>
+                    <Input id="postalCode" placeholder="760032 (Ejemplo)" type="text" />
                   </LabelInputContainer>
                 </div>
                 <LabelInputContainer className="mb-4">
                   <Label htmlFor="email">Dirección Email</Label>
-                  <Input id="email" placeholder="projectmayhem@fc.com" type="email" />
+                  <Input id="email" placeholder="projectmayhem@fc.com (Ejemplo)" type="email" />
                 </LabelInputContainer>
                 <LabelInputContainer className="mb-4">
-                  <Label htmlFor="direccion">Dirección</Label>
-                  <Input id="password" placeholder="Cll 9 # 70-90" type="text" />
+                  <Label htmlFor="streetAddress">Dirección</Label>
+                  <Input id="streetAddress" placeholder="Cll 9 # 70-90 (Ejemplo)" type="text" />
                 </LabelInputContainer>
-
-                <div className="flex flex-col space-y-4">
-                  <button 
-                    className="
-                      w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12  text-xs sm:text-sm md:text-xl animate-shimmer items-center justify-center z-40
-                      rounded-lg border border-[#5d9a8c] bg-[linear-gradient(110deg,#000103,45%,#75ba75,55%,#000103)] 
-                      bg-[length:200%_100%] px-3.5 font-normal md:font-medium text-slate-100 transition-colors focus:outline-none 
-                      focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
-                    "
-                  >
-                    Realizar pedido<WhatsAppIcon className="ml-2 h-3.5 sm:h-3.8 md:h-4 lg:h-5" />
-                  </button>
-                </div>
-
+                <LabelInputContainer className="mb-4">
+                  <Label htmlFor="streetAddress">Conjunto Residencial - Apartamento - Bloque</Label>
+                  <Input id="streetAddress" placeholder="Quintas de Don Simon - Bloque 2 - 204 (Ejemplo)" type="text" />
+                </LabelInputContainer>
+                <LabelInputContainer className="mb-4">
+                  <Label htmlFor="country">País</Label>
+                  <Input id="country" placeholder="Colombia (Ejemplo)" type="text" />
+                </LabelInputContainer>
+                <button 
+                  className="
+                    w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12  text-xs sm:text-sm md:text-xl animate-shimmer items-center justify-center z-40
+                    rounded-lg border border-[#5d9a8c] bg-[linear-gradient(110deg,#000103,45%,#75ba75,55%,#000103)] 
+                    bg-[length:200%_100%] px-3.5 font-normal md:font-medium text-slate-100 transition-colors focus:outline-none 
+                    focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
+                  "
+                >
+                  Realizar pedido<WhatsAppIcon className="ml-2 h-3.5 sm:h-3.8 md:h-4 lg:h-5" />
+                </button>
                 <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-
-                
               </form>
               </div>
             </div>
