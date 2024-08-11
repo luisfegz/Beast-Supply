@@ -107,8 +107,8 @@ export default function CartPage() {
                 Bienvenido a Beast Supply
               </h2>
               <p className="text-sm max-w-sm mt-2 text-neutral-300">
-                Déjenos sus datos de entrega y los datos personales de la persona que recibirá su pedido 
-                que recibirá su pedido, a continuación:
+                Déjenos tus datos de contacto para realizar la entrega de tu pedido o de la perona 
+                que recibirá tu pedido.
               </p>
 
               <form className="my-8" >
@@ -117,25 +117,29 @@ export default function CartPage() {
                     <Label htmlFor="name">Primer nombre</Label>
                     <Input id="name" placeholder="Tyler Durden (Ejemplo)" type="text" />
                   </LabelInputContainer>
-                  <LabelInputContainer>
-                    <Label htmlFor="city">Ciudad</Label>
-                    <Input id="city" placeholder="Santiafo de Cali (Ejemplo)" type="text" />
-                  </LabelInputContainer>
-                  <LabelInputContainer>
-                    <Label htmlFor="postalCode">Codigo Postal</Label>
-                    <Input id="postalCode" placeholder="760032 (Ejemplo)" type="text" />
-                  </LabelInputContainer>
                 </div>
                 <LabelInputContainer className="mb-4">
                   <Label htmlFor="email">Dirección Email</Label>
                   <Input id="email" placeholder="projectmayhem@fc.com (Ejemplo)" type="email" />
                 </LabelInputContainer>
+                <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
+                  <LabelInputContainer>
+                    <Label htmlFor="streetAddress">Dirección</Label>
+                    <Input id="streetAddress" placeholder="Cll 9 # 70-90 (Ejemplo)" type="text" />
+                  </LabelInputContainer>
+                  <LabelInputContainer>
+                    <Label htmlFor="city">Ciudad</Label>
+                    <Input id="city" placeholder="Santiago de Cali (Ejemplo)" type="text" />
+                  </LabelInputContainer>
+                </div>
+                 <LabelInputContainer  className='mb-4'>
+                  <LabelInputContainer>
+                      <Label htmlFor="postalCode">Codigo Postal</Label>
+                      <Input id="postalCode" placeholder="760032 (Ejemplo)" type="text" />
+                    </LabelInputContainer>
+                  </LabelInputContainer>
                 <LabelInputContainer className="mb-4">
-                  <Label htmlFor="streetAddress">Dirección</Label>
-                  <Input id="streetAddress" placeholder="Cll 9 # 70-90 (Ejemplo)" type="text" />
-                </LabelInputContainer>
-                <LabelInputContainer className="mb-4">
-                  <Label htmlFor="streetAddress">Conjunto Residencial - Apartamento - Bloque</Label>
+                  <Label htmlFor="streetAddress">Conjunto Residencial - Bloque/Torre - Apartamento/Casa</Label>
                   <Input id="streetAddress" placeholder="Quintas de Don Simon - Bloque 2 - 204 (Ejemplo)" type="text" />
                 </LabelInputContainer>
                 <LabelInputContainer className="mb-4">
