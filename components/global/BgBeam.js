@@ -21,7 +21,7 @@ export function BgBeam({featuredProduct}) {
               <div>
                 <h1 className='font-bold md:font-black mb-2 text-lg md:text-xl lg:text-2xl text-white'>{featuredProduct.title}</h1>
                 <p className='text-[.6rem] text-white md:text-[1.1rem] lg:text-[1.3rem]'>{featuredProduct.description}</p>
-                {/* <------------------------------------------------------------ Button Read More REMEMBER ---------------------------------------------------------------------------------------------------------------------> */}
+                {/* <------------------------------------------------------------ Button Read More REMEMBER ---------------------------------------------------------------------------------------------------------------------> 
                 <div className='flex mt-3.5 md:mt-4 lg:mt-5'>
                   <div>
                   <Link 
@@ -36,7 +36,7 @@ export function BgBeam({featuredProduct}) {
                       Leer+
                     </Link>
                   </div>
-                  {/* <------------------------------------------------------------ Button with functions of add to cart REMEMBER -----------------------------------------------------------------------------------------------> */}
+                  {/* <------------------------------------------------------------ Button with functions of add to cart REMEMBER -----------------------------------------------------------------------------------------------> 
                   <div className='ml-2 md:ml-4 lg:ml-6'>
                     <button 
                       onClick={addFeaturedToCart}
@@ -54,10 +54,10 @@ export function BgBeam({featuredProduct}) {
                   {/* <-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> */}
                 </div>
               </div>
-            </div>
-            <div>
-              <img className='max-w-[100%]' src="https://luisfelipegaitan-next-ecommerce.s3.amazonaws.com/1721346417623.png" alt="Image" />
-            </div>
+                
+                <div>
+                  <img className='max-w-[100%]' src="https://luisfelipegaitan-next-ecommerce.s3.amazonaws.com/1721346417623.png" alt="Image" />
+                </div>
             
           </Wrapper>
         </Center>
