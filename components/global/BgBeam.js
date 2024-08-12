@@ -12,8 +12,8 @@ export function BgBeam({featuredProduct}) {
     addProduct(featuredProduct._id);
   }
   return (
-    <div className="h-[30rem] w-full rounded-md  relative flex flex-col items-center justify-center antialiased">
-      const {addProduct} = useContext(CartContext);
+    <div className="h-[30rem] w-full rounded-md relative flex flex-col items-center justify-center antialiased">
+      
       <div className=''>
         <Center>
           <Wrapper>
