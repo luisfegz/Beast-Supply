@@ -37,7 +37,7 @@
     ".next/types/app/(main)/juguetes/page.tsx",
     ".next/types/app/(main)/accesorios/page.tsx",
     "src/app/page.js"
-, "components/global/Featured.js", "components/global/NewProducts.js", "components/global/NewProducts/ProductBox.js", "components/global/Center.js", "components/global/Navbar.js", "src/pages/cart.js"  ],
+, "components/global/Featured.js", "components/global/NewProducts.js", "components/global/NewProducts/ProductBox.js", "components/global/Center.js", "components/global/Navbar.js", "src/pages/cart.js", "models/Product.js", "lib/mongoose.js"  ],
   "exclude": [
     "node_modules"
   ]

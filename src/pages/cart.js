@@ -5,15 +5,20 @@ import { Label } from "../../components/ui/label";
 import { Input } from "../../components/ui/input";
 import { cn } from '../../components/utils/cn'
 import { CartContext } from '../../components/global/CartContext';
-
-import Table from '../../components/global//Table.js';
-import axios from 'axios';
 import CartIcon from '../../components/icons/CartIcon';
-
+import axios from 'axios';
+import Table from '../../components/global/Table.js'
 
 export default function CartPage() {
   const { cartProducts } = useContext(CartContext);
-  
+  const [ products, setProducts ] = useState([]);
+  useEffect(() => {
+    if (cartProducts.length > 0) {
+      axios.post('api/cart?', {ids:cartProducts}).then(response => {
+        setProducts(response.data);
+      })
+    }
+  }, [cartProducts])
   {/*function formatPrice(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   }
@@ -25,7 +30,7 @@ export default function CartPage() {
       city,
       postalCode,
       streetAddress,
-      country,
+      departamento,
       cartProducts,
     });
     if (response.data.url) {
@@ -56,7 +61,7 @@ export default function CartPage() {
     const postalCodeValue = document.getElementById("postalCode").value;
     const emailValue = document.getElementById("email").value;
     const streetAddressValue = document.getElementById("streetAddress").value;
-    const countryValue = document.getElementById("country").value;
+    const departamentoValue = document.getElementById("departamento").value;
 
     const cartText = getCartText(selectedOption, selectedOption2, selectedOption3);
     const streetAddressEncoded = encodeURIComponent(streetAddressValue);
@@ -67,7 +72,7 @@ export default function CartPage() {
       `Código postal: ${postalCodeValue}`,
       `Email: ${emailValue}`,
       `Dirección: ${streetAddressEncoded}`,
-      `Departamento: ${countryValue}`,
+      `Departamento: ${departamentoValue}`,
       "",
       "Productos:",
       "",
@@ -100,25 +105,47 @@ export default function CartPage() {
             {/* Box Products */}
 
             <div className='bg-neutral-900 rounded-[8.6px] p-5'>
+              <h2 className="font-bold text-xl flex text-neutral-200">
+                Carrito de compras
+                <CartIcon 
+                  className="
+                    mt-[6.6px] ml-2 h-[18px] sm:h-[18px] md:h-4 lg:h-5
+                  "
+                />
+              </h2>
+
+              <p className="text-sm max-w-sm mt-2 text-neutral-300">
+              ¡Mejora tu rendimiento! 💪 Completa tu compra con nuestros suplementos deportivos de alta calidad. ¡No te quedes sin ellos!
+              </p>
+
+              <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+
               {!cartProducts?.length && (
-                <div>Your Cart is empty</div>
+                <div>Tu carrito de compras esta vacio 😮</div>
               )}
-              {cartProducts?.length > 0 && (
-                <>
-                  <h2 className="font-bold text-xl flex text-neutral-200">
-                    Carrito de compras
-                    <CartIcon 
-                      className="
-                        mt-[6.6px] ml-2 h-[18px] sm:h-[18px] md:h-4 lg:h-5
-                      "
-                    />
-                  </h2>
-
-                  <p className="text-sm max-w-sm mt-2 text-neutral-300">
-                  ¡Mejora tu rendimiento! 💪 Completa tu compra con nuestros suplementos deportivos de alta calidad. ¡No te quedes sin ellos!
-                  </p>
-
-                </>
+              {products?.length > 0 && ( 
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Producto</th>
+                      <th>Cantidad</th>
+                      <th>Precio</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {products.map(product => (
+                      <div>
+                        {product.title} :  
+                        {
+                          cartProducts.filter
+                          ( 
+                            id => id === product._id 
+                          ).length
+                        }
+                      </div>
+                    ))}
+                  </tbody>
+                </table>
               )}
             </div>
 
@@ -141,7 +168,7 @@ export default function CartPage() {
                   <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
 
                     <LabelInputContainer>
-                      <Label htmlFor="name">Primer nombre</Label>
+                      <Label htmlFor="name">Nombre y Apellido</Label>
                       <Input id="name" placeholder="Tyler Durden (Ejemplo)" type="text" />
                     </LabelInputContainer>
 
@@ -177,8 +204,8 @@ export default function CartPage() {
                   </LabelInputContainer>
 
                   <LabelInputContainer className="mb-4">
-                    <Label htmlFor="country">País</Label>
-                    <Input id="country" placeholder="Colombia (Ejemplo)" type="text" />
+                    <Label htmlFor="departamento">Departamento</Label>
+                    <Input id="departamento" placeholder="VALLE (Ejemplo)" type="text" />
                   </LabelInputContainer>
 
                   <button 

@@ -18,6 +18,7 @@ import Link from "next/link";
 import { Badge } from "lucide-react";
 import { FlipWords } from "../../components/ui/flip-words";
 import { Carousel, Card } from "../../components/ui/apple-cards-carousel";
+import { BgBeam } from "../../components/global/BgBeam.js";
 
 
 interface HomeProps {
@@ -153,13 +154,14 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
               }
             />
           </div>
-        </section>
-       <--------------------------------- Third Section: Experimental ---------------------------------> 
-        <section className="w-full mt-0 inset-0">
-          <Featured featuredProduct={featuredProduct}/>
         </section> */}
+       {/*<--------------------------------- Third Section: Experimental ---------------------------------> */}
+        <section className="w-full mt-0 inset-0">
+          {/*<Featured featuredProduct={featuredProduct}/>*/}
+          <BgBeam featuredProduct={featuredProduct}/>
+        </section>
         
-        {/*<------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> */} 
+        {/*<------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> 
         <section className="w-full mt-0 inset-0">
           <div className=" rounded-md h-[30vh] overflow-hidden">
             <Vortex
