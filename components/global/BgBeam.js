@@ -50,11 +50,11 @@ export function BgBeam({featuredProduct}) {
                       Añadir <CartIcon /> 
                     </button>
                   </div>
-                  
+                  <BackgroundBeams />
                   {/* <-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> */}
                 </div>
               </div>
-                <BackgroundBeams />
+                
                 <div>
                   <img className='max-w-[100%]' src="https://luisfelipegaitan-next-ecommerce.s3.amazonaws.com/1721346417623.png" alt="Image" />
                 </div>
