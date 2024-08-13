@@ -157,8 +157,7 @@ export default function Home({ featuredProduct, newProducts }: HomeProps) {
         </section> */}
        {/*<--------------------------------- Third Section: Experimental ---------------------------------> */}
         <section className="w-full mt-0 inset-0">
-          {/*<Featured featuredProduct={featuredProduct}/>*/}
-          <BgBeam featuredProduct={featuredProduct}/>
+          <Featured featuredProduct={featuredProduct}/>
         </section>
         
         {/*<------------------------------- Second Section: Lamp Component (Maybe in this home page it's better hide this ) --------------------------------> 
