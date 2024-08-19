@@ -8,6 +8,35 @@ import { CartContext } from '../../components/global/CartContext';
 import CartIcon from '../../components/icons/CartIcon';
 import axios from 'axios';
 import Table from '../../components/global/Table.js'
+import styled from "styled-components";
+
+const ProductInfoCell = styled.td`
+  padding: 10px 0;
+`;
+
+const ProductImageBox = styled.div`
+  width: 70px;
+  height: 100px;
+  padding: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    img {
+      max-width: 80px;
+      max-height: 80px;
+    }
+  }
+`;
 
 export default function CartPage() {
   const { cartProducts } = useContext(CartContext);
@@ -124,7 +153,7 @@ export default function CartPage() {
                 <div>Tu carrito de compras esta vacio 😮</div>
               )}
               {products?.length > 0 && ( 
-                <table>
+                <Table>
                   <thead>
                     <tr>
                       <th>Producto</th>
@@ -134,18 +163,29 @@ export default function CartPage() {
                   </thead>
                   <tbody>
                     {products.map(product => (
-                      <div>
-                        {product.title} :  
-                        {
-                          cartProducts.filter
-                          ( 
-                            id => id === product._id 
-                          ).length
+                      <tr>
+                        <td>
+                          <ProductInfoCell>
+                            <ProductImageBox>
+                                <img src={product.images[0]} alt={product.title} />
+                            </ProductImageBox>
+                            {product.title}
+                          </ProductInfoCell>
+                          
+                        </td>
+                        <td>
+                          {
+                            cartProducts.filter
+                            ( 
+                              id => id === product._id 
+                            ).length
                         }
-                      </div>
+                        </td>
+                        <td>{product.price.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</td>
+                      </tr>
                     ))}
                   </tbody>
-                </table>
+                </Table>
               )}
             </div>
 

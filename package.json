@@ -29,7 +29,7 @@
     "react-dom": "^18",
     "react-element-to-jsx-string": "^15.0.0",
     "simplex-noise": "^4.0.2",
-    "styled-components": "^6.1.11",
+    "styled-components": "^6.1.12",
     "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },

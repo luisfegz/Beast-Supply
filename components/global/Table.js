@@ -1,30 +1,19 @@
-export default function Table(props) {
-    return (
-      <table className="w-full">
-        <thead>
-          <tr>
-            {props.columns.map((column, index) => (
-              <th
-                key={index}
-                className="text-left uppercase text-gray-400 font-semibold text-xs"
-              >
-                {column}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {props.data.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <td key={cellIndex} className="border-t border-gray-200">
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    );
+import styled from "styled-components";
+
+const StyledTable = styled.table`
+  width: 100%;
+  th{
+    text-align: left;
+    text-transform: uppercase;
+    color: #ccc;
+    font-weight: 600;
+    font-size: .7rem;
   }
-  
+  td{
+    border-top: 1px solid rgba(0,0,0,.1);
+  }
+`;
+
+export default function Table(props) {
+  return <StyledTable {...props} />
+}
