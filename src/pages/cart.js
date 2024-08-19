@@ -33,6 +33,10 @@ const ProductImageBox = styled.div`
   }
 `;
 
+const QuantityLabel = styled.span`
+  padding: 0 3px;
+`;
+
 export default function CartPage() {
   const { cartProducts } = useContext(CartContext);
   const [ products, setProducts ] = useState([]);
@@ -167,12 +171,32 @@ export default function CartPage() {
                           
                         </td>
                         <td>
-                          {
-                            cartProducts.filter
-                            ( 
-                              id => id === product._id 
-                            ).length
-                          }
+                          <button 
+                            className='
+                              border-0 px-[10.5px] py-1.5 rounded cursor-pointer inline-flex items-center
+                              no-underline font-poppins font-medium text-sm bg-[#303030] text-white
+                              border-black mx-[6.5px]
+                            '
+                          >
+                            -
+                          </button>
+                          <QuantityLabel>
+                            {
+                              cartProducts.filter
+                              ( 
+                                id => id === product._id 
+                              ).length
+                            }
+                          </QuantityLabel>
+                          <button 
+                            className='
+                              border-0 px-[10.5px] py-1.5 rounded cursor-pointer inline-flex items-center
+                              no-underline font-poppins font-medium text-sm bg-[#303030] text-white
+                              border-black mx-[6.5px]
+                            '
+                          >
+                            +
+                          </button>
                         </td>
                         <td>
                           {(
