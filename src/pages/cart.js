@@ -38,15 +38,28 @@ const QuantityLabel = styled.span`
 `;
 
 export default function CartPage() {
-  const { cartProducts, addProduct, removeProduct } = useContext(CartContext);
+  const { cartProducts, addProduct, removeProduct, clearCart } = useContext(CartContext);
   const [ products, setProducts ] = useState([]);
   useEffect(() => {
     if (cartProducts.length > 0) {
-      axios.post('api/cart?', {ids:cartProducts}).then(response => {
+      axios.post("/api/cart", { ids: cartProducts }).then((response) => {
         setProducts(response.data);
-      })
+      });
+    } else {
+      setProducts([]);
     }
   }, [cartProducts]);
+ 
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    if (window.location.href.includes("success")) {
+      setIsSuccess(true);
+      clearCart();
+    }
+  }, []);
+
   function moreOfThisProduct(id) {
     addProduct(id);
   }
@@ -264,6 +277,9 @@ export default function CartPage() {
               </div>
             )}
             </div>
+        </section>
+        <section className="w-full mt-20 inset-0 h-screen">
+          
         </section>
       </main>
     </>
