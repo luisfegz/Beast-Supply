@@ -38,7 +38,7 @@ const QuantityLabel = styled.span`
 `;
 
 export default function CartPage() {
-  const { cartProducts } = useContext(CartContext);
+  const { cartProducts, addProduct, removeProduct } = useContext(CartContext);
   const [ products, setProducts ] = useState([]);
   useEffect(() => {
     if (cartProducts.length > 0) {
@@ -46,83 +46,46 @@ export default function CartPage() {
         setProducts(response.data);
       })
     }
-  }, [cartProducts])
-  {/*function formatPrice(value) {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  }, [cartProducts]);
+  function moreOfThisProduct(id) {
+    addProduct(id);
   }
-
-  async function goToPayment() {
-    const response = await axios.post("/api/checkout", {
-      name,
-      email,
-      city,
-      postalCode,
-      streetAddress,
-      departamento,
-      cartProducts,
-    });
-    if (response.data.url) {
-      window.location.href = response.data.url;
-    }
+  function lessOfThisProduct(id) {
+    removeProduct(id);
   }
-
-  function getCartText(selectedOption, selectedOption2, selectedOption3) {
-    let cartText = products
-      .map((product) => {
-        const quantity = cartProducts.filter((id) => id === product._id).length;
-        return `- ${product.title} (Cantidad: ${quantity}, Precio: ${formatPrice(
-          quantity * product.price
-        )} COP)`;
-      })
-      .join("%0a");
-
-    cartText += `%0a%0aTotal: $${formatPrice(total + shippingCost)} COP`;
-    cartText += `%0aDomicilio: $${formatPrice(shippingCost)} COP`;
-    
-
-    return cartText;
-  }
-
-  async function gotowhatsapp() {
-    const nameValue = document.getElementById("name").value;
-    const cityValue = document.getElementById("city").value;
-    const postalCodeValue = document.getElementById("postalCode").value;
-    const emailValue = document.getElementById("email").value;
-    const streetAddressValue = document.getElementById("streetAddress").value;
-    const departamentoValue = document.getElementById("departamento").value;
-
-    const cartText = getCartText(selectedOption, selectedOption2, selectedOption3);
-    const streetAddressEncoded = encodeURIComponent(streetAddressValue);
-    const message = [
-      "Hola ¡Champion Store! Estos son mis datos de compra:",
-      `Nombre: ${nameValue}`,
-      `Ciudad: ${cityValue}`,
-      `Código postal: ${postalCodeValue}`,
-      `Email: ${emailValue}`,
-      `Dirección: ${streetAddressEncoded}`,
-      `Departamento: ${departamentoValue}`,
-      "",
-      "Productos:",
-      "",
-      cartText,
-    ].join("%0a");
-
-    const url = `https://wa.me/3023639624?text=${message}`;
-    window.open(url, "_blank").focus();
-  }
-
   let total = 0;
   products.forEach((product) => {
     const quantity = cartProducts.filter((id) => id === product._id).length;
     total += quantity * product.price;
   });
 
-  if (isSuccess) {
-    return (
-      <>
-      </>
-    );
-  */}
+  function goToWhatsapp() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const streetAddress = document.getElementById('streetAddress').value;
+    const city = document.getElementById('city').value;
+    const postalCode = document.getElementById('postalCode').value;
+    const departamento = document.getElementById('departamento').value;
+
+    let message = `Hola, me gustaría realizar un pedido con los siguientes detalles:\n\n`;
+    products.forEach(product => {
+      const quantity = cartProducts.filter(id => id === product._id).length;
+      message += `- ${product.title} (x${quantity}): ${(
+        quantity * product.price
+      ).toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}\n`;
+    });
+    message += `\nTotal: ${total.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}\n\n`;
+    message += `Datos de contacto:\n`;
+    message += `Nombre: ${name}\n`;
+    message += `Email: ${email}\n`;
+    message += `Dirección: ${streetAddress}\n`;
+    message += `Ciudad: ${city}\n`;
+    message += `Código Postal: ${postalCode}\n`;
+    message += `Departamento: ${departamento}\n`;
+
+    const whatsappURL = `https://wa.me/573023639624?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+  }
   return (
     <>
       <main className="flex bg-[#0a0a0a] items-center justify-center flex-col">
@@ -172,10 +135,11 @@ export default function CartPage() {
                         </td>
                         <td>
                           <button 
+                            onClick={() => lessOfThisProduct(product._id)}
                             className='
-                              border-0 px-[10.5px] py-1.5 rounded cursor-pointer inline-flex items-center
+                              border-0 px-[8.5px] py-1.5 rounded cursor-pointer inline-flex items-center
                               no-underline font-poppins font-medium text-sm bg-[#303030] text-white
-                              border-black mx-[6.5px]
+                              border-black mx-[2px]
                             '
                           >
                             -
@@ -188,11 +152,12 @@ export default function CartPage() {
                               ).length
                             }
                           </QuantityLabel>
-                          <button 
+                          <button
+                            onClick={() => moreOfThisProduct(product._id)} 
                             className='
-                              border-0 px-[10.5px] py-1.5 rounded cursor-pointer inline-flex items-center
+                              border-0 px-[8.5px] py-1.5 rounded cursor-pointer inline-flex items-center
                               no-underline font-poppins font-medium text-sm bg-[#303030] text-white
-                              border-black mx-[6.5px]
+                              border-black mx-[2px]
                             '
                           >
                             +
@@ -205,10 +170,21 @@ export default function CartPage() {
                         </td>
                       </tr>
                     ))}
+                    <tr>
+                      <td  className='py-6 text-left uppercase text-gray-300 font-semibold text-xs'>
+                        Total
+                      </td>
+                      <td>
+                        
+                      </td>
+                      <td>
+                        {total.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}
+                      </td>
+                    </tr>
                   </tbody>
                 </Table>
               )}
-              <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
+              <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
             </div>
 
             {/* Box of Order Information */}
@@ -270,7 +246,9 @@ export default function CartPage() {
                     <Input id="departamento" placeholder="VALLE (Ejemplo)" type="text" />
                   </LabelInputContainer>
 
-                  <button 
+                  <button
+                    type='button'
+                    onClick={goToWhatsapp}
                     className="
                       w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12  text-xs sm:text-sm md:text-xl animate-shimmer items-center justify-center z-40
                       rounded-lg border border-[#5d9a8c] bg-[linear-gradient(110deg,#000103,45%,#75ba75,55%,#000103)] 
@@ -286,9 +264,6 @@ export default function CartPage() {
               </div>
             )}
             </div>
-        </section>
-        <section className="w-full mt-20 inset-0 h-screen">
-          
         </section>
       </main>
     </>
