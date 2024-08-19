@@ -10,15 +10,10 @@ import axios from 'axios';
 import Table from '../../components/global/Table.js'
 import styled from "styled-components";
 
-const ProductInfoCell = styled.td`
-  padding: 10px 0;
-`;
-
 const ProductImageBox = styled.div`
   width: 70px;
   height: 100px;
   padding: 2px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -146,9 +141,8 @@ export default function CartPage() {
               <p className="text-sm max-w-sm mt-2 text-neutral-300">
               ¡Mejora tu rendimiento! 💪 Completa tu compra con nuestros suplementos deportivos de alta calidad. ¡No te quedes sin ellos!
               </p>
-
-              <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
-
+              <br />
+              <br />
               {!cartProducts?.length && (
                 <div>Tu carrito de compras esta vacio 😮</div>
               )}
@@ -164,13 +158,12 @@ export default function CartPage() {
                   <tbody>
                     {products.map(product => (
                       <tr>
-                        <td>
-                          <ProductInfoCell>
+                        <td className='py-[8px]'>
+                          
                             <ProductImageBox>
                                 <img src={product.images[0]} alt={product.title} />
                             </ProductImageBox>
                             {product.title}
-                          </ProductInfoCell>
                           
                         </td>
                         <td>
@@ -179,14 +172,19 @@ export default function CartPage() {
                             ( 
                               id => id === product._id 
                             ).length
-                        }
+                          }
                         </td>
-                        <td>{product.price.toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}</td>
+                        <td>
+                          {(
+                            cartProducts.filter(id => id === product._id).length * product.price
+                          ).toLocaleString('es-CO', { style: 'currency', currency: 'COP' })}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
                 </Table>
               )}
+              <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8 h-[1px] w-full" />
             </div>
 
             {/* Box of Order Information */}
