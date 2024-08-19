@@ -150,7 +150,7 @@ export default function CartPage() {
                           <button 
                             onClick={() => lessOfThisProduct(product._id)}
                             className='
-                              border-0 px-[8.5px] py-1.5 rounded cursor-pointer inline-flex items-center
+                              border-0 px-[7.1px] py-1.5 rounded cursor-pointer inline-flex items-center
                               no-underline font-poppins font-medium text-sm bg-[#303030] text-white
                               border-black mx-[2px]
                             '
@@ -168,7 +168,7 @@ export default function CartPage() {
                           <button
                             onClick={() => moreOfThisProduct(product._id)} 
                             className='
-                              border-0 px-[8.5px] py-1.5 rounded cursor-pointer inline-flex items-center
+                              border-0 px-[7.1px] py-1.5 rounded cursor-pointer inline-flex items-center
                               no-underline font-poppins font-medium text-sm bg-[#303030] text-white
                               border-black mx-[2px]
                             '
