@@ -31,13 +31,13 @@ export default function ProductBox({_id, title, description, price, images}) {
             href='/cart' 
             onClick={() => addProduct(_id)}
             className="
-                w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12  text-xs md:text-xl animate-shimmer items-center justify-center z-40
+                mt-5 w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12  text-base md:text-xl animate-shimmer items-center justify-center z-40
                 rounded-lg border border-[#5d9a8c] bg-[linear-gradient(110deg,#000103,45%,#71a3c1,55%,#000103)] 
                 bg-[length:200%_100%] px-3.5 font-normal md:font-medium text-slate-100 transition-colors focus:outline-none 
                 focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
               "
           >
-              Comprar Ahora<CartShop className="ml-[6px] h-[20px] md:h-4 lg:h-5" />
+              Comprar<CartShop className="ml-[6px] h-[20px] md:h-4 lg:h-5" />
           </Link>
           <button 
             onClick={() => addProduct(_id)}
