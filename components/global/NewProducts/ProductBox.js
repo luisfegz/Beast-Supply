@@ -37,7 +37,7 @@ export default function ProductBox({_id, title, description, price, images}) {
                 focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
               "
           >
-              Comprar Ahora<CartShop className="ml-[6px] h-[12px] sm:h-[12px] md:h-4 lg:h-5" />
+              Comprar Ahora<CartShop className="ml-[6px] h-[20px] md:h-4 lg:h-5" />
           </Link>
           <button 
             onClick={() => addProduct(_id)}
@@ -48,7 +48,7 @@ export default function ProductBox({_id, title, description, price, images}) {
                 focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
               "
           >
-              Añadir <CartIcon className="ml-2 h-3.5 sm:h-3.8 md:h-4 lg:h-5" />
+              Añadir <CartIcon className="ml-2 h-[16px] md:h-4 lg:h-5" />
           </button>
         </BackgroundGradient>
       </div>
