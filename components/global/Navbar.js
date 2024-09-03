@@ -38,6 +38,17 @@ const Navbar = () => {
                     list-none
                 '
             >
+              <li>
+                    <Link
+                        href='/todo'
+                        className={buttonVariants({
+                            variant: 'ghost',
+                            size: 'sm',
+                        })}
+                    >
+                        Todo
+                    </Link>
+                </li>
                 <li>
                     <Link
                         href='/proteinas'
@@ -68,7 +79,7 @@ const Navbar = () => {
                             size: 'sm',
                         })}
                     >
-                        Pre entrenos
+                        Boost
                     </Link>
                 </li>
             </ul>

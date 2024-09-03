@@ -35,7 +35,18 @@ const MobileNav = () => {
                 <li>
                   <Link
                     onClick={() =>
-                      closeOnCurrent('/accesorios')
+                      closeOnCurrent('/todo')
+                    }
+                    className='flex items-center w-full font-medium text-xl text-white'
+                    href='/todo'>
+                    Todos los productos
+                  </Link>
+                </li>
+                <li className='my-3 h-px w-full bg-zinc-700' />
+                <li>
+                  <Link
+                    onClick={() =>
+                      closeOnCurrent('/proteinas')
                     }
                     className='flex items-center w-full font-medium text-xl text-white'
                     href='/proteinas'>
@@ -46,7 +57,7 @@ const MobileNav = () => {
                 <li>
                   <Link
                     onClick={() =>
-                      closeOnCurrent('/juguetes')
+                      closeOnCurrent('/creatinas')
                     }
                     className='flex items-center w-full font-medium text-xl text-white'
                     href='/creatinas'>
@@ -57,11 +68,11 @@ const MobileNav = () => {
                 <li>
                   <Link
                     onClick={() =>
-                      closeOnCurrent('/nosotros')
+                      closeOnCurrent('/prentrenos')
                     }
                     className='flex items-center w-full font-medium text-xl text-white'
                     href='/prentrenos'>
-                    Pre entrenos
+                    Boost
                   </Link>
                 </li>
               </>
