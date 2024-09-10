@@ -36,7 +36,7 @@ export default function ProductBox({_id, title, description, price, images}) {
                     focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
                   "
                 >
-                  +Info
+                  Leer+
                 </Link>
               </div>
             <div>
