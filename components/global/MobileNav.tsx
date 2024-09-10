@@ -32,7 +32,8 @@ const MobileNav = () => {
         <div className='fixed animate-in slide-in-from-top-5 fade-in-20 inset-0 z-0 w-full'>
           <ul className='absolute border-b border-zinc-700 shadow-xl grid w-full gap-3 px-10 pt-20 pb-8 bg-black'>
               <>
-                <li>
+                <li className='absolute border-b border-zinc-700 shadow-xl grid w-full mt-[76px] bg-black' />
+                <li className='mt-5'>
                   <Link
                     onClick={() =>
                       closeOnCurrent('/todo')

@@ -103,7 +103,7 @@ export default function CartPage() {
     <>
       <main className="flex bg-[#0a0a0a] items-center justify-center flex-col">
         <Navbar />
-        <section className="w-full mt-0 inset-0">
+        <section className=" mt-0 inset-0">
           <div className='text-white mb-10 grid grid-rows-2   md:grid-cols-2 mt-4 md:mt-8 gap-[40px] md:gap-10 mx-2.5 md:mx-6'>
             
             {/* Box Products */}

@@ -60,7 +60,7 @@ function Featured({featuredProduct}) {
               </div>
             </div>
             <div>
-              <img className='max-w-[100%]' src="https://luisfelipegaitan-next-ecommerce.s3.amazonaws.com/1721346417623.png" alt="Image" />
+              <img className='max-w-[100%]' src="https://luisfelipegaitan-next-ecommerce.s3.amazonaws.com/1723137131319.png" alt="Image" />
             </div>
           </Wrapper>
         </Center>
