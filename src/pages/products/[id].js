@@ -16,7 +16,7 @@ const ColWrapper = styled.div`
     grid-template-columns: 0.8fr 1.2fr;
   }
   gap: 40px;
-  margin: 40px 0;
+  margin-top: 20px;
 `;
 const PriceRow = styled.div`
     display: block;
@@ -79,6 +79,7 @@ export default function ProductPage({product,_id}) {
                 </section>
                 
             <main/>
+            {/* It is suppose to modify description size to change h value above */}
             <div className='h-[1490px] bg-[#000000]'/>
         </>
     )
