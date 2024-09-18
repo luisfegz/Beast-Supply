@@ -104,7 +104,7 @@ const Navbar = () => {
               <SearchIcon />
             </Link>          
             <Link 
-              href='/ofertas' 
+              href='/Categorias' 
               className="
                 inline-flex h-12 text-base md:text-xl animate-shimmer items-center justify-center z-40
                 rounded-md border border-zinc-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] 
@@ -112,7 +112,7 @@ const Navbar = () => {
                 focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
               "
             >
-              Ofertas
+              Categorias
             </Link>
             <Link 
               href='/cart' 
