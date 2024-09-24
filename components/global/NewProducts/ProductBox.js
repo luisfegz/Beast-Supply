@@ -30,10 +30,10 @@ export default function ProductBox({_id, title, description, price, images}) {
                 <Link 
                   href={'/products/'+_id}
                   className="
-                    mt-5 w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12  text-base md:text-xl animate-shimmer items-center justify-center z-40
-                    rounded-lg border border-[#5d9a8c] bg-[linear-gradient(110deg,#000103,45%,#71a3c1,55%,#000103)] 
-                    bg-[length:200%_100%] px-3.5 font-normal md:font-medium text-slate-100 transition-colors focus:outline-none 
-                    focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
+                    mt-5 w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12 md:text-xl 
+                    shadow-[0_0_0_3px_#000000_inset] px-3 py-3 md:px-6 md:py-4 bg-transparent border
+                    border-white text-white  rounded-lg font-normal transform 
+                    transition duration-400 hover:-translate-y-1 text-base
                   "
                 >
                   Leer+
@@ -43,10 +43,11 @@ export default function ProductBox({_id, title, description, price, images}) {
               <button 
                 onClick={() => addProduct(_id)}
                 className="
-                    mt-5 w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12  text-base md:text-xl animate-shimmer items-center justify-center z-40
-                    rounded-lg border border-[#5d9a8c] bg-[linear-gradient(110deg,#000103,45%,#71a3c1,55%,#000103)] 
-                    bg-[length:200%_100%] px-3.5 font-normal md:font-medium text-slate-100 transition-colors focus:outline-none 
-                    focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
+                    mt-5 w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12 md:text-xl items-center justify-center z-40
+                    font-normal md:font-medium focus:outline-none 
+                    shadow-[0_0_0_3px_#000000_inset] px-3.5 py-4 bg-transparent border
+                    border-white text-white  rounded-lg transform 
+                  transition duration-400 hover:-translate-y-1 text-base
                   "
               >
                   + <CartIcon className="ml-[1.2px] h-[16px] md:h-4 lg:h-5" />
@@ -60,9 +61,12 @@ export default function ProductBox({_id, title, description, price, images}) {
             onClick={() => addProduct(_id)}
             className="
                 mt-5 w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12  text-base md:text-xl animate-shimmer items-center justify-center z-40
-                rounded-lg border border-[#5d9a8c] bg-[linear-gradient(110deg,#000103,45%,#71a3c1,55%,#000103)] 
-                bg-[length:200%_100%] px-3.5 font-normal md:font-medium text-slate-100 transition-colors focus:outline-none 
-                focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50
+                px-3.5 font-normal md:font-medium focus:outline-none 
+                
+
+                shadow-[0_0_0_3px_#000000_inset] py-4 bg-transparent border
+                border-white text-white  rounded-lg transform 
+                transition duration-400 hover:-translate-y-1
               "
           >
               Comprar<CartShop className="ml-[6px] h-[20px] md:h-4 lg:h-5" />
