@@ -31,7 +31,7 @@ export default function ProductBox({_id, title, description, price, images}) {
                   href={'/products/'+_id}
                   className="
                     mt-5 w-full inline-flex lg:h-16 md:h-15 sm:h-14 h-12 md:text-xl 
-                    shadow-[0_0_0_3px_#000000_inset] px-3 py-3 md:px-6 md:py-4 bg-transparent border
+                    shadow-[0_0_0_3px_#000000_inset] px-3 py-2 md:px-6 md:py-4 bg-transparent border
                     border-white text-white  rounded-lg font-normal transform 
                     transition duration-400 hover:-translate-y-1 text-base
                   "
