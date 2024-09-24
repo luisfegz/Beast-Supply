@@ -80,7 +80,7 @@ export default function ProductPage({product,_id}) {
                 
             <main/>
             {/* It is suppose to modify description size to change h value above */}
-            <div className='h-[1490px] bg-[#000000]'/>
+            <div className='h-[1790px] bg-[#000000]'/>
         </>
     )
 }
